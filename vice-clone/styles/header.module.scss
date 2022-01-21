@@ -1,3 +1,23 @@
 .header {
-  font-family: SourceCodePro;
+  background-color: black;
+  color: white;
+  position: fixed;
+  width: 100vw;
+
+  .top {
+    font-family: SourceCodePro;
+    font-size: 11px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255,255,255,.2);
+    padding: 12px 40px 10px 40px;
+
+    .left {
+      > * {
+        padding-right: 20px;
+      }
+    }
+  }
+
 }
