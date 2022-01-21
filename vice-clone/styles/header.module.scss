@@ -12,10 +12,41 @@
     justify-content: space-between;
     border-bottom: 1px solid rgba(255,255,255,.2);
     padding: 12px 40px 10px 40px;
-
+    
     .left {
       > * {
         padding-right: 20px;
+      }
+    }
+  }
+  
+  .main {
+    height: 80px;
+    padding: 10px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Grotesk;
+    border-bottom: 1px solid rgba(255,255,255,.2);
+
+    a {
+      font-size: 18px;
+      margin-bottom: 2px;
+      &:hover {
+        opacity: .6;
+        cursor: pointer;
+      }
+    }
+
+    div:first-child {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .icons {
+      > * {
+        padding: 0 10px;
       }
     }
   }
