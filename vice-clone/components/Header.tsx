@@ -10,11 +10,11 @@ import { links } from '../utils/data'
 
 
 
-const hideOnScroll = (menu: string) => {
-  return menu === "small" ? styles.small : '';
+const hideOnScroll = (header: string) => {
+  return header === "small" ? styles.small : '';
 }
-const moveOnScroll = (menu: string) => {
-  return menu === "small" ? styles.move : '';
+const moveOnScroll = (header: string) => {
+  return header === "small" ? styles.move : '';
 }
 
 const Header = ({ menu, displayMenu }: MenuProps) => {
