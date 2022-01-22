@@ -1,6 +1,6 @@
 import styles from '../styles/header.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import { faBars, faTimes, faUser } from '@fortawesome/free-solid-svg-icons';
 import { faTwitter, faInstagram, faFacebookSquare } from '@fortawesome/free-brands-svg-icons';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -77,14 +77,18 @@ const Header = ({ menu, displayMenu }: MenuProps) => {
                 </div>
             }
           </div>
-          <Image
-            src="/vice-logo-white.png"
-            alt="Vice"
-            width={80}
-            height={35}
-            layout='fixed'
-            className={`${styles.logo} ${moveOnScroll(header)}`}
-          />
+          {
+            header === 'full' ?
+              <Image
+                src="/vice-logo-white.png"
+                alt="Vice"
+                width={80}
+                height={35}
+                layout='fixed'
+                className={styles.logo}
+              /> :
+              null
+          }
           <div className={`${styles.links} ${hideOnScroll(header)}`}>
             {links.map((link, i) => {
               return (
@@ -95,16 +99,38 @@ const Header = ({ menu, displayMenu }: MenuProps) => {
             })}
           </div>
         </div>
-        <div className={`${styles.icons} ${hideOnScroll(header)}`}>
-          <a>
-            <FontAwesomeIcon icon={faFacebookSquare} />
-          </a>
-          <a>
-            <FontAwesomeIcon icon={faInstagram} />
-          </a>
-          <a>
-            <FontAwesomeIcon icon={faTwitter} />
-          </a>
+        {
+          header === 'small' ?
+            <Image
+              src="/vice-logo-white.png"
+              alt="Vice"
+              width={80}
+              height={35}
+              layout='fixed'
+              className={styles.logo}
+            /> :
+            null
+        }
+        <div className={`${styles.icons}`}>
+          {
+            header === 'full' ?
+              <>
+                <a>
+                  <FontAwesomeIcon icon={faFacebookSquare} />
+                </a>
+                <a>
+                  <FontAwesomeIcon icon={faInstagram} />
+                </a>
+                <a>
+                  <FontAwesomeIcon icon={faTwitter} />
+                </a>
+              </> :
+              <>
+                <a>
+                  <FontAwesomeIcon icon={faUser} />
+                </a>
+              </>
+          }
         </div>
       </div>
     </div>
