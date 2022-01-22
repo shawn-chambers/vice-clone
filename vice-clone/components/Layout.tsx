@@ -1,13 +1,14 @@
 import Header from './Header';
+import { MenuProps } from '../utils/interfaces'
 
-interface Props {
-  children: React.ReactNode[] | React.ReactNode
+interface LayoutProps extends MenuProps {
+  children: React.ReactNode[] | React.ReactNode,
 }
 
-const Layout = ({ children }: Props) => {
+const Layout = ({ children, menu, displayMenu }: LayoutProps) => {
   return (
     <>
-      <Header />
+      <Header menu={menu} displayMenu={displayMenu}/>
       {children}
     </>
   )
