@@ -1,5 +1,6 @@
 import Header from './Header';
 import { MenuProps } from '../utils/interfaces'
+import Menu from './Menu';
 
 interface LayoutProps extends MenuProps {
   children: React.ReactNode[] | React.ReactNode,
@@ -8,8 +9,10 @@ interface LayoutProps extends MenuProps {
 const Layout = ({ children, menu, displayMenu }: LayoutProps) => {
   return (
     <>
-      <Header menu={menu} displayMenu={displayMenu}/>
-      {children}
+      <Header menu={menu} displayMenu={displayMenu} />
+      {
+        menu ? <Menu /> : children
+      }
     </>
   )
 }

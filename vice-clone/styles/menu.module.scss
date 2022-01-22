@@ -1,5 +1,65 @@
 .menu {
-  top: 115px;
+  padding: 115px 40px 20px 40px;
   font-family: Grotesk;
-  padding: 0 40px;
+  background-color: black;
+  color: white;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  // grid-template-columns: 25% 1fr;
+  // grid-template-areas: "sideList mainList";
+
+  a:hover {
+    opacity: .6;
+    cursor: pointer;
+  }
+
+  .sideList {
+    padding: 35px 40px 0px 0px;
+    grid-area: sideList;
+    font-size: 37px;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  
+  .searchbar {
+    margin: 40px 0px;
+  }
+
+  .mediaLinks {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    font-size: 25px;
+  }
+ 
+  .mainList {
+    font-size: 20px;
+    text-transform: capitalize;
+    display: flex;
+    flex-wrap: wrap;
+    max-height: 80vh;
+    column-gap: 40px;
+    flex-basis: 100%;
+    @media (max-width: 800px) {
+      display: block;
+      max-height: 100%;
+    }
+
+    li {
+      font-size: 25px;
+      list-style-type: none;
+      margin: 0;
+      padding: 10px 0;
+      border-bottom: 1px solid rgba(255,255,255,.2);
+      @media (min-width: 800px) {
+        flex-basis: 44%;
+      }
+    }
+  }
 }
