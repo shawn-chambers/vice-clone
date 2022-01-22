@@ -4,7 +4,7 @@ import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import { faTwitter, faInstagram, faFacebookSquare } from '@fortawesome/free-brands-svg-icons';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { MenuProps } from '../utils/interfaces'
 
 const links: string[] = [
@@ -15,8 +15,14 @@ const links: string[] = [
   'Rec Room'
 ];
 
+const hideOnScroll = (menu: string) => {
+  return menu === "small" ? styles.small : '';
+}
+const moveOnScroll = (menu: string) => {
+  return menu === "small" ? styles.move : '';
+}
 
-const Header = ({menu, displayMenu} : MenuProps) => {
+const Header = ({ menu, displayMenu }: MenuProps) => {
 
   const handleMenuClick = () => {
     displayMenu((prev) => {
@@ -24,10 +30,25 @@ const Header = ({menu, displayMenu} : MenuProps) => {
     })
   };
 
+  const [header, setHeader] = useState<string>("full");
+
+  const listenScrollEvent = () => {
+    if (window.scrollY < 170) {
+      return setHeader("full");
+    } else if (window.scrollY > 70) {
+      return setHeader("small");
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", listenScrollEvent);
+
+    return () => window.removeEventListener("scroll", listenScrollEvent);
+  }, []);
 
   return (
-    <div className={styles.header}>
-      <div className={styles.top}>
+    <div className={`${styles.header} ${moveOnScroll(header)}`}>
+      <div className={`${styles.top} ${hideOnScroll(header)}`}>
         <div className={styles.left}>
           <Link href="/">
             <a>Sign in</a>
@@ -42,7 +63,7 @@ const Header = ({menu, displayMenu} : MenuProps) => {
           </a>
         </Link>
       </div>
-      <div className={styles.main}>
+      <div className={`${styles.main} ${moveOnScroll(header)}`}>
         <div>
           <div onClick={handleMenuClick}>
             {
@@ -62,17 +83,19 @@ const Header = ({menu, displayMenu} : MenuProps) => {
             width={80}
             height={35}
             layout='fixed'
-            className={styles.logo}
+            className={`${styles.logo} ${moveOnScroll(header)}`}
           />
-          {links.map((link, i) => {
-            return (
-              <Link href="/" key={`${link}-${i}`}>
-                <a>{link}</a>
-              </Link>
-            )
-          })}
+          <div className={`${styles.links} ${hideOnScroll(header)}`}>
+            {links.map((link, i) => {
+              return (
+                <Link href="/" key={`${link}-${i}`}>
+                  <a>{link}</a>
+                </Link>
+              )
+            })}
+          </div>
         </div>
-        <div className={styles.icons}>
+        <div className={`${styles.icons} ${hideOnScroll(header)}`}>
           <a>
             <FontAwesomeIcon icon={faFacebookSquare} />
           </a>
