@@ -6,14 +6,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
 import { MenuProps } from '../utils/interfaces'
+import { links } from '../utils/data'
 
-const links: string[] = [
-  'Video',
-  'TV',
-  'News',
-  'Tech',
-  'Rec Room'
-];
+
 
 const hideOnScroll = (menu: string) => {
   return menu === "small" ? styles.small : '';
@@ -63,7 +58,7 @@ const Header = ({ menu, displayMenu }: MenuProps) => {
           </a>
         </Link>
       </div>
-      <div className={`${styles.main} ${moveOnScroll(header)}`}>
+      <div className={`${styles.main} ${moveOnScroll(header)}`} style={menu ? {borderBottom: '1px solid black'} : {}}>
         <div>
           <div onClick={handleMenuClick}>
             {
@@ -89,7 +84,9 @@ const Header = ({ menu, displayMenu }: MenuProps) => {
               /> :
               null
           }
-          <div className={`${styles.links} ${hideOnScroll(header)}`}>
+          {
+            !menu ?
+            <div className={`${styles.links} ${hideOnScroll(header)}`}>
             {links.map((link, i) => {
               return (
                 <Link href="/" key={`${link}-${i}`}>
@@ -97,7 +94,8 @@ const Header = ({ menu, displayMenu }: MenuProps) => {
                 </Link>
               )
             })}
-          </div>
+          </div> : null
+          }
         </div>
         {
           header === 'small' ?
@@ -114,6 +112,7 @@ const Header = ({ menu, displayMenu }: MenuProps) => {
         <div className={`${styles.icons}`}>
           {
             header === 'full' ?
+            !menu ?
               <>
                 <a>
                   <FontAwesomeIcon icon={faFacebookSquare} />
@@ -124,7 +123,8 @@ const Header = ({ menu, displayMenu }: MenuProps) => {
                 <a>
                   <FontAwesomeIcon icon={faTwitter} />
                 </a>
-              </> :
+              </>  : null
+              :
               <>
                 <a>
                   <FontAwesomeIcon icon={faUser} />
