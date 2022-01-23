@@ -1,6 +1,8 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import PromoList from '../components/PromoList'
+import Masonry from '../components/Masonry'
+
 import styles from '../styles/Home.module.scss'
 
 const Home: NextPage = () => {
@@ -13,6 +15,7 @@ const Home: NextPage = () => {
       </Head>
 
       <PromoList />
+      <Masonry />
     </div>
   )
 }

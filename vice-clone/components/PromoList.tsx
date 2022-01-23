@@ -3,11 +3,13 @@ import Promo from './Promo';
 
 const PromoList = () => {
   return (
-    <ul className={styles.promoList}>
-      <Promo />
-      <Promo />
-      <Promo />
-    </ul>
+    <section>
+      <ul className={styles.promoList}>
+        <Promo />
+        <Promo />
+        <Promo />
+      </ul>
+    </section>
   )
 }
 
