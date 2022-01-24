@@ -6,9 +6,12 @@
   flex-direction: column;
   
   .picture {
-    width: 100%;
     flex-basis: 66.6666667%;
-    background: cornflowerblue;
+    background: white;
+
+    img {
+      width: 100%;
+    }
   }
 
   .content {

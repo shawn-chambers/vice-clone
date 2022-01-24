@@ -1,33 +1,41 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from 'next/link';
 import styles from '../styles/firststory.module.scss';
+import { MainArticleProps } from '../utils/interfaces';
 
-const FirstStory = () => {
+const FirstStory = ({ mainArticle }: MainArticleProps) => {
+  const {
+    category,
+    teaser,
+    quote,
+    url,
+  } = mainArticle;
+
   return (
     <div className={styles.first}>
       <div className={styles.picture}>
-        {/* <img
-          src="https://source.unsplash.com/random/900x600"
+        <img
+          src="https://video-images.vice.com/articles/61e7194338835100961c3922/lede/1642694933752-photo935class010.jpeg?crop=1xw:0.8733239237826393xh;center,center&resize=2134:*"
           alt="random pic"
-        /> */}
+        />
       </div>
       <div className={styles.content}>
         <div className={styles.left}>
-          <Link href='/'>
+          <Link href={url}>
             <a className={styles.category}>
-              Technology
+              {category}
             </a>
           </Link>
           <div className={styles.headline}>
-            <Link href='/'>
+            <Link href={url}>
               <a>
-                This is the Thing That We Will Talk About in This Article
+                {teaser}
               </a>
             </Link>
           </div>
         </div>
         <div className={styles.right}>
-          This is a quote from the article to my left. I am sure you will enjoy it if you take the time to read it. Or don&apos;t, that&apos;s ok, too.
+          {quote}
         </div>
       </div>
     </div>

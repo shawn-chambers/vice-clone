@@ -1,18 +1,31 @@
+// .container {
+//   display: grid;
+//   grid-template-columns: 2fr 1fr;
+//   grid-template-rows: 2fr 1fr;
+//   grid-template-areas:  
+//     "first story1"
+//     "first story1"
+//     "first story2";
+//   height: 810px;
+
+//   .left {
+//     grid-area: first;
+//   }
+
+//   .right {
+
+//   }
+// }
 .container {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-template-rows: 2fr 1fr;
-  grid-template-areas: 
-    "first story1"
-    "first story1"
-    "first story2";
-  height: 810px;
+  display: flex;
+  flex-basis: 100%;
+  flex-direction: row;
 
   .left {
-    grid-area: first;
+    flex-basis: 66.6666666667%;
   }
 
   .right {
-
+    flex-basis: 33.333333333%;
   }
 }

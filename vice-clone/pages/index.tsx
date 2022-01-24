@@ -3,6 +3,8 @@ import Head from 'next/head'
 import PromoList from '../components/PromoList'
 import Masonry from '../components/Masonry'
 
+import { mainArticle } from '../utils/data';
+
 import styles from '../styles/Home.module.scss'
 
 const Home: NextPage = () => {
@@ -15,7 +17,7 @@ const Home: NextPage = () => {
       </Head>
 
       <PromoList />
-      <Masonry />
+      <Masonry data={mainArticle}/>
     </div>
   )
 }
