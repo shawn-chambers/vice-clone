@@ -9,7 +9,7 @@ export interface MainArticle {
     quote: string
     author: string
     url: string
-    data: string
+    date: string
 }
 
 export interface MainArticleProps {

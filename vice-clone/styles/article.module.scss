@@ -1,0 +1,41 @@
+.article {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.info {
+  padding: 40px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  a:hover {
+    opacity: 0.6;
+  }
+
+  .category {
+    text-decoration: underline;
+  }
+
+  .teaser {
+    font-family: Grotesk;
+    font-size: 24px;
+  }
+
+  .author,
+  .date {
+    font-family: SourceCodePro;
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+}
+
+.pic {
+  background: white;
+  img {
+    width: 100%;
+  }
+}
