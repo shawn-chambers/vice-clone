@@ -6,7 +6,6 @@
   flex-direction: column;
   
   .picture {
-    flex-basis: 66.6666667%;
     background: white;
 
     img {
@@ -17,8 +16,8 @@
   .content {
     background: white;
     bottom: 40px;
-    flex-basis: 33.3333333%;
     display: flex;
+
 
     .left {
       background: black;
@@ -27,13 +26,13 @@
       flex-direction: column;
       flex-basis: 50%;
       height: calc(100% + 40px);
-      padding: 40px;
+      padding: 40px 40px 60px 40px;
       position: relative;
       bottom: 40px;
 
       .category {
         text-decoration: underline;
-        margin-bottom: 10px;
+        margin-bottom: 14px;
         &:hover {
           opacity: .6;
         }
@@ -42,10 +41,17 @@
       .headline {
         font-family: Grotesk;
         font-size: 36px;
+        margin-bottom: 14px;
         line-height: 1;
         &:hover {
           opacity: .6;
         }
+      }
+
+      .author {
+        font-family: SourceCodePro;
+        text-transform: uppercase;
+        font-size: 12px;
       }
     }
 

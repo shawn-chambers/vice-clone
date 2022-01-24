@@ -8,6 +8,7 @@ const FirstStory = ({ mainArticle }: MainArticleProps) => {
     category,
     teaser,
     quote,
+    author,
     url,
   } = mainArticle;
 
@@ -32,6 +33,9 @@ const FirstStory = ({ mainArticle }: MainArticleProps) => {
                 {teaser}
               </a>
             </Link>
+          </div>
+          <div className={styles.author}>
+            {author}
           </div>
         </div>
         <div className={styles.right}>

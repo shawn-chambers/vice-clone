@@ -2,7 +2,9 @@ export const mainArticle = {
   category: 'Technology',
   teaser: "This is the Thing That We Will Talk About in This Article",
   quote: "This is a quote from the article to my left. I am sure you will enjoy it if you take the time to read it. Or don't, that's ok, too.",
-  url: '/'
+  author: 'R McDonald',
+  url: '/',
+  date: '02.12.89'
 }
 
 export const links: string[] = [

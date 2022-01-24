@@ -7,7 +7,9 @@ export interface MainArticle {
     category: string
     teaser: string
     quote: string
+    author: string
     url: string
+    data: string
 }
 
 export interface MainArticleProps {
