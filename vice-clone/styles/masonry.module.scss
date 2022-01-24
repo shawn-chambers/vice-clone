@@ -1,21 +1,3 @@
-// .container {
-//   display: grid;
-//   grid-template-columns: 2fr 1fr;
-//   grid-template-rows: 2fr 1fr;
-//   grid-template-areas:  
-//     "first story1"
-//     "first story1"
-//     "first story2";
-//   height: 810px;
-
-//   .left {
-//     grid-area: first;
-//   }
-
-//   .right {
-
-//   }
-// }
 .container {
   display: flex;
   flex-basis: 100%;

@@ -13,3 +13,9 @@ export interface MainArticle {
 export interface MainArticleProps {
   mainArticle: MainArticle
 }
+
+export interface CircleProps {
+  text: string
+  arc: number
+  radius: number
+}

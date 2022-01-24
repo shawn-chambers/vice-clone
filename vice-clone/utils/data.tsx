@@ -13,6 +13,18 @@ export const links: string[] = [
   'Rec Room'
 ];
 
+export const menuLinks: string[] = [
+  'ABOUT',
+  'JOBS',
+  'PARTNER',
+  'VICE VOICES',
+  'CONTENT FUNDING ON VICE',
+  'SECURITY POLICY',
+  'PRIVACY & TERMS',
+  'ACCESSIBILITY STATEMENT',
+
+]
+
 export const sideList: string[] = [
   "Video",
   "TV",
