@@ -28,7 +28,7 @@ const Header = ({ menu, displayMenu }: MenuProps) => {
   const [header, setHeader] = useState<string>("full");
 
   const listenScrollEvent = () => {
-    if (window.scrollY < 170) {
+    if (window.scrollY < 200) {
       return setHeader("full");
     } else if (window.scrollY > 70) {
       return setHeader("small");
